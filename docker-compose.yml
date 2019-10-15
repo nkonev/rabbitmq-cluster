@@ -1,0 +1,55 @@
+version: '3.2'
+
+services:
+
+  rabbitmq-1:
+    image: rabbitmq:3.7.14-management
+    restart: unless-stopped
+    hostname: node-1.rabbit
+#    domainname: node-1.rabbit
+    container_name: node-1.rabbit
+    ports:
+      - 15672:15672
+      - 5672:5672
+      - 61613:61613
+    environment:
+      - RABBITMQ_USE_LONGNAME=true
+      - RABBITMQ_ERLANG_COOKIE=FSLIVMJBLLWZDMTOAGMR
+    volumes:
+      - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - rabbitmq_data_dir_1:/var/lib/rabbitmq/mnesia
+    networks:
+      - rabbitmq_cluster
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+
+  rabbitmq-2:
+    image: rabbitmq:3.7.14-management
+    restart: unless-stopped
+    hostname: node-2.rabbit
+#    domainname: node-2.rabbit
+    container_name: node-2.rabbit
+    ports:
+      - 25672:15672
+    environment:
+      - RABBITMQ_USE_LONGNAME=true
+      - RABBITMQ_ERLANG_COOKIE=FSLIVMJBLLWZDMTOAGMR
+    volumes:
+      - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - rabbitmq_data_dir_2:/var/lib/rabbitmq/mnesia
+    networks:
+      - rabbitmq_cluster
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+
+
+volumes:
+  rabbitmq_data_dir_1:
+  rabbitmq_data_dir_2:
+
+networks:
+  rabbitmq_cluster:
