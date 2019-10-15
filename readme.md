@@ -9,6 +9,7 @@ docker-compose down -v
 ```
 
 # RabbitMQ cluster
+* https://www.rabbitmq.com/cluster-formation.html#initial-formation-race-condition
 * https://www.rabbitmq.com/clustering.html
 * https://thewebland.net/development/devops/rabbitmq/nastrojka-klastera-rabbitmq-na-docker/
 * https://github.com/rabbitmq/rabbitmq-consistent-hash-exchange

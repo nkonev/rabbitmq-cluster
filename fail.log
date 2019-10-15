@@ -1,0 +1,127 @@
+nkonev@localhost ~/javaWorkspace/rabbitmq-cluster (master) $ docker-compose logs -f rabbitmq-2
+Attaching to node-2.rabbit
+node-2.rabbit |
+node-2.rabbit |   ##  ##
+node-2.rabbit |   ##  ##      RabbitMQ 3.7.14. Copyright (C) 2007-2019 Pivotal Software, Inc.
+node-2.rabbit |   ##########  Licensed under the MPL.  See https://www.rabbitmq.com/
+node-2.rabbit |   ######  ##
+node-2.rabbit |   ##########  Logs: <stdout>
+node-2.rabbit |
+node-2.rabbit |               Starting broker...
+node-2.rabbit | 2019-10-15 21:53:56.671 [info] <0.217.0>
+node-2.rabbit |  Starting RabbitMQ 3.7.14 on Erlang 21.3.8.1
+node-2.rabbit |  Copyright (C) 2007-2019 Pivotal Software, Inc.
+node-2.rabbit |  Licensed under the MPL.  See https://www.rabbitmq.com/
+node-2.rabbit | 2019-10-15 21:53:56.677 [info] <0.217.0>
+node-2.rabbit |  node           : rabbit@node-2.rabbit
+node-2.rabbit |  home dir       : /var/lib/rabbitmq
+node-2.rabbit |  config file(s) : /etc/rabbitmq/rabbitmq.conf
+node-2.rabbit |  cookie hash    : rPQcNtb0lwP1dHp4oPtxTg==
+node-2.rabbit |  log(s)         : <stdout>
+node-2.rabbit |  database dir   : /var/lib/rabbitmq/mnesia/rabbit@node-2.rabbit
+node-2.rabbit | 2019-10-15 21:53:57.939 [info] <0.217.0> Running boot step pre_boot defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:57.940 [info] <0.217.0> Running boot step rabbit_core_metrics defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:57.940 [info] <0.217.0> Running boot step rabbit_alarm defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:57.942 [info] <0.225.0> Memory high watermark set to 6359 MiB (6668124160 bytes) of 15898 MiB (16670310400 bytes) total
+node-2.rabbit | 2019-10-15 21:53:57.944 [info] <0.227.0> Enabling free disk space monitoring
+node-2.rabbit | 2019-10-15 21:53:57.945 [info] <0.227.0> Disk free limit set to 50MB
+node-2.rabbit | 2019-10-15 21:53:57.946 [info] <0.217.0> Running boot step code_server_cache defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:57.947 [info] <0.217.0> Running boot step file_handle_cache defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:57.947 [info] <0.230.0> Limiting to approx 1048476 file handles (943626 sockets)
+node-2.rabbit | 2019-10-15 21:53:57.947 [info] <0.231.0> FHC read buffering:  OFF
+node-2.rabbit | 2019-10-15 21:53:57.947 [info] <0.231.0> FHC write buffering: ON
+node-2.rabbit | 2019-10-15 21:53:57.947 [info] <0.217.0> Running boot step worker_pool defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> Running boot step database defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> Node database directory at /var/lib/rabbitmq/mnesia/rabbit@node-2.rabbit is empty. Assuming we need to join an existing cluster or initialise from scratch...
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> Configured peer discovery backend: rabbit_peer_discovery_classic_config
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> Will try to lock with peer discovery backend rabbit_peer_discovery_classic_config
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> Peer discovery backend does not support locking, falling back to randomized delay
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> Peer discovery backend rabbit_peer_discovery_classic_config does not support registration, skipping randomized startup delay.
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> All discovered existing cluster peers: rabbit@node-2.rabbit, rabbit@node-1.rabbit
+node-2.rabbit | 2019-10-15 21:53:57.948 [info] <0.217.0> Peer nodes we can cluster with: rabbit@node-1.rabbit
+node-2.rabbit | 2019-10-15 21:53:57.967 [warning] <0.217.0> Could not auto-cluster with node rabbit@node-1.rabbit: {error,tables_not_present}
+node-2.rabbit | 2019-10-15 21:53:57.967 [warning] <0.217.0> Could not successfully contact any node of: rabbit@node-1.rabbit (as in Erlang distribution). Starting as a blank standalone node...
+node-2.rabbit | 2019-10-15 21:53:57.969 [info] <0.43.0> Application mnesia exited with reason: stopped
+node-2.rabbit | 2019-10-15 21:53:58.139 [info] <0.217.0> Waiting for Mnesia tables for 20000 ms, 19 retries left
+node-2.rabbit | 2019-10-15 21:53:58.189 [info] <0.217.0> Waiting for Mnesia tables for 20000 ms, 19 retries left
+node-2.rabbit | 2019-10-15 21:53:58.217 [info] <0.217.0> Waiting for Mnesia tables for 20000 ms, 19 retries left
+node-2.rabbit | 2019-10-15 21:53:58.217 [info] <0.217.0> Peer discovery backend rabbit_peer_discovery_classic_config does not support registration, skipping registration.
+node-2.rabbit | 2019-10-15 21:53:58.217 [info] <0.217.0> Running boot step database_sync defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step codec_correctness_check defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step external_infrastructure defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_registry defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_queue_location_random defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_event defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_exchange_type_direct defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_exchange_type_headers defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_exchange_type_topic defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.218 [info] <0.217.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Running boot step rabbit_priority_queue defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Priority queues enabled, real BQ is rabbit_variable_queue
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Running boot step rabbit_queue_location_client_local defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Running boot step kernel_ready defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Running boot step rabbit_sysmon_minder defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Running boot step rabbit_epmd_monitor defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.219 [info] <0.217.0> Running boot step guid_generator defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.223 [info] <0.217.0> Running boot step rabbit_node_monitor defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.223 [info] <0.411.0> Starting rabbit_node_monitor
+node-2.rabbit | 2019-10-15 21:53:58.223 [info] <0.217.0> Running boot step delegate_sup defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.224 [info] <0.217.0> Running boot step rabbit_memory_monitor defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.224 [info] <0.217.0> Running boot step core_initialized defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.224 [info] <0.217.0> Running boot step upgrade_queues defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.255 [info] <0.217.0> message_store upgrades: 1 to apply
+node-2.rabbit | 2019-10-15 21:53:58.255 [info] <0.217.0> message_store upgrades: Applying rabbit_variable_queue:move_messages_to_vhost_store
+node-2.rabbit | 2019-10-15 21:53:58.255 [info] <0.217.0> message_store upgrades: No durable queues found. Skipping message store migration
+node-2.rabbit | 2019-10-15 21:53:58.255 [info] <0.217.0> message_store upgrades: Removing the old message store data
+node-2.rabbit | 2019-10-15 21:53:58.256 [info] <0.217.0> message_store upgrades: All upgrades applied successfully
+node-2.rabbit | 2019-10-15 21:53:58.293 [info] <0.217.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.293 [info] <0.217.0> Running boot step rabbit_exchange_parameters defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.293 [info] <0.217.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.294 [info] <0.217.0> Running boot step rabbit_policies defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.294 [info] <0.217.0> Running boot step rabbit_policy defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.294 [info] <0.217.0> Running boot step rabbit_queue_location_validator defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.294 [info] <0.217.0> Running boot step rabbit_vhost_limit defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.294 [info] <0.217.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management
+node-2.rabbit | 2019-10-15 21:53:58.294 [info] <0.217.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent
+node-2.rabbit | 2019-10-15 21:53:58.294 [info] <0.217.0> Management plugin: using rates mode 'basic'
+node-2.rabbit | 2019-10-15 21:53:58.295 [info] <0.217.0> Running boot step recovery defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.295 [info] <0.217.0> Running boot step load_definitions defined by app rabbitmq_management
+node-2.rabbit | 2019-10-15 21:53:58.295 [info] <0.217.0> Running boot step empty_db_check defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.295 [info] <0.217.0> Adding vhost '/'
+node-2.rabbit | 2019-10-15 21:53:58.333 [info] <0.450.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@node-2.rabbit/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists
+node-2.rabbit | 2019-10-15 21:53:58.340 [info] <0.450.0> Starting message stores for vhost '/'
+node-2.rabbit | 2019-10-15 21:53:58.340 [info] <0.454.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index
+node-2.rabbit | 2019-10-15 21:53:58.340 [info] <0.450.0> Started message store of type transient for vhost '/'
+node-2.rabbit | 2019-10-15 21:53:58.340 [info] <0.457.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index
+node-2.rabbit | 2019-10-15 21:53:58.341 [warning] <0.457.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch
+node-2.rabbit | 2019-10-15 21:53:58.341 [info] <0.450.0> Started message store of type persistent for vhost '/'
+node-2.rabbit | 2019-10-15 21:53:58.342 [info] <0.217.0> Creating user 'admin'
+node-2.rabbit | 2019-10-15 21:53:58.347 [info] <0.217.0> Setting user tags for user 'admin' to [administrator]
+node-2.rabbit | 2019-10-15 21:53:58.354 [info] <0.217.0> Setting permissions for 'admin' in '/' to '.*', '.*', '.*'
+node-2.rabbit | 2019-10-15 21:53:58.360 [info] <0.217.0> Running boot step rabbit_looking_glass defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.360 [info] <0.217.0> Running boot step rabbit_core_metrics_gc defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.360 [info] <0.217.0> Running boot step background_gc defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.361 [info] <0.217.0> Running boot step connection_tracking defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.368 [info] <0.217.0> Setting up a table for connection tracking on this node: 'tracked_connection_on_node_rabbit@node-2.rabbit'
+node-2.rabbit | 2019-10-15 21:53:58.375 [info] <0.217.0> Setting up a table for per-vhost connection counting on this node: 'tracked_connection_per_vhost_on_node_rabbit@node-2.rabbit'
+node-2.rabbit | 2019-10-15 21:53:58.375 [info] <0.217.0> Running boot step routing_ready defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.375 [info] <0.217.0> Running boot step pre_flight defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.375 [info] <0.217.0> Running boot step notify_cluster defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.375 [info] <0.217.0> Running boot step networking defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.376 [warning] <0.489.0> Setting Ranch options together with socket options is deprecated. Please use the new map syntax that allows specifying socket options separately from other options.
+node-2.rabbit | 2019-10-15 21:53:58.376 [info] <0.503.0> started TCP listener on [::]:5672
+node-2.rabbit | 2019-10-15 21:53:58.376 [info] <0.217.0> Running boot step direct_client defined by app rabbit
+node-2.rabbit | 2019-10-15 21:53:58.409 [info] <0.557.0> Management plugin: HTTP (non-TLS) listener started on port 15672
+node-2.rabbit | 2019-10-15 21:53:58.410 [info] <0.663.0> Statistics database started.
+node-2.rabbit | 2019-10-15 21:53:58.503 [info] <0.8.0> Server startup complete; 3 plugins started.
+node-2.rabbit |  * rabbitmq_management
+node-2.rabbit |  * rabbitmq_web_dispatch
+node-2.rabbit |  * rabbitmq_management_agent
+node-2.rabbit |  completed with 3 plugins.
