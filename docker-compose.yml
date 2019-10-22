@@ -3,10 +3,10 @@ version: '3.2'
 services:
 
   rabbitmq-1:
-    image: rabbitmq:3.7.14-management
+    image: rabbitmq:3.7.19-management
     restart: unless-stopped
     hostname: node-1.rabbit
-#    domainname: node-1.rabbit
+    #    domainname: node-1.rabbit
     container_name: node-1.rabbit
     ports:
       - 15672:15672
@@ -16,29 +16,39 @@ services:
       - RABBITMQ_USE_LONGNAME=true
       - RABBITMQ_ERLANG_COOKIE=FSLIVMJBLLWZDMTOAGMR
     volumes:
+      - ./rabbitmq/docker-entrypoint-cluster.sh:/usr/local/bin/docker-entrypoint-cluster.sh
+      - ./rabbitmq/rabbitmq_definitions.json:/etc/rabbitmq/rabbitmq_definitions.json
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
       - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
       - rabbitmq_data_dir_1:/var/lib/rabbitmq/mnesia
+    entrypoint: ["/usr/local/bin/docker-entrypoint-cluster.sh"]
+    command: ["rabbitmq-server"]
     networks:
       - rabbitmq_cluster
     logging:
       driver: "json-file"
       options:
         max-size: "50m"
-
   rabbitmq-2:
-    image: rabbitmq:3.7.14-management
+    image: rabbitmq:3.7.19-management
     restart: unless-stopped
     hostname: node-2.rabbit
-#    domainname: node-2.rabbit
+    #    domainname: node-2.rabbit
     container_name: node-2.rabbit
     ports:
+      - 6672:5672
       - 25672:15672
     environment:
       - RABBITMQ_USE_LONGNAME=true
       - RABBITMQ_ERLANG_COOKIE=FSLIVMJBLLWZDMTOAGMR
     volumes:
+      - ./rabbitmq/docker-entrypoint-cluster.sh:/usr/local/bin/docker-entrypoint-cluster.sh
+      - ./rabbitmq/rabbitmq_definitions.json:/etc/rabbitmq/rabbitmq_definitions.json
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
       - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
       - rabbitmq_data_dir_2:/var/lib/rabbitmq/mnesia
+    entrypoint: ["/usr/local/bin/docker-entrypoint-cluster.sh"]
+    command: ["rabbitmq-server"]
     networks:
       - rabbitmq_cluster
     logging:
